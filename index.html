@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EuroConnect - Home</title>
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Main CSS (managed separately) -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <h1>EuroConnect</h1>
+        <nav>
+          <ul>
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="packages.html">Plans</a></li>
+            <li><a href="#faq">FAQ</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero">
+      <div class="hero-content">
+        <h2>Welcome to EuroConnect!</h2>
+        <p>
+          Premium TV subscriptions for expats and international viewers. Fast
+          payments, easy installation, and cable‑free streaming — everything
+          online!
+        </p>
+        <a href="packages.html" class="btn">View Plans</a>
+      </div>
+    </section>
+
+    <!-- Minimal Info Section -->
+    <section id="info" class="container">
+      <h2>Discover our offers</h2>
+      <p>
+        To explore every package and its respective price, simply click the
+        button above.
+      </p>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="container">
+      <h2>Frequently Asked Questions</h2>
+      <div class="faq-item">
+        <h3>How do I activate my subscription?</h3>
+        <p>
+          After completing your payment, you will receive an email with
+          installation and activation instructions.
+        </p>
+      </div>
+      <div class="faq-item">
+        <h3>What happens after payment?</h3>
+        <p>
+          Once your payment is successful, you will be redirected to a thank‑you
+          page and a confirmation email will be sent automatically.
+        </p>
+      </div>
+      <div class="faq-item">
+        <h3>Do I need a stable internet connection?</h3>
+        <p>
+          Yes, a reliable connection is required to enjoy all EuroConnect
+          features without interruption.
+        </p>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="container">
+      <h2>Contact / Request a 24‑hour Free Trial!</h2>
+      <p>
+        Fill out the form and we’ll get back to you with installation
+        instructions and further details.
+      </p>
+      <!--
+        Final form with a few extra fields:
+        "country" and "phone"
+      -->
+      <form id="contactForm" name="contact" method="POST" data-netlify="true">
+        <input type="hidden" name="form-name" value="contact" />
+
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required />
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required />
+
+        <label for="phone">Phone:</label>
+        <input
+          type="text"
+          id="phone"
+          name="phone"
+          placeholder="+44 7123 456789"
+        />
+
+        <label for="country">Country:</label>
+        <input
+          type="text"
+          id="country"
+          name="country"
+          placeholder="e.g. UK, Italy, Spain"
+        />
+
+        <label for="deviceType">Device type (optional):</label>
+        <select id="deviceType" name="deviceType">
+          <option value="">Select your device</option>
+          <option value="Smart TV">Smart TV</option>
+          <option value="Android">Android</option>
+          <option value="iPhone">iPhone</option>
+          <option value="Firestick">Firestick</option>
+          <option value="Windows">Windows</option>
+        </select>
+
+        <label for="preferredPlayer">Preferred player (optional):</label>
+        <select id="preferredPlayer" name="preferredPlayer">
+          <option value="">Select a player</option>
+          <option value="IBO">IBO</option>
+          <option value="IBO Pro">IBO Pro</option>
+          <option value="Bob Player">Bob Player</option>
+          <option value="Other">Other</option>
+        </select>
+
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" required></textarea>
+
+        <button type="submit">Submit</button>
+      </form>
+    </section>
+
+    <footer>
+      <div class="container">
+        <p>&copy; 2025 EuroConnect. All rights reserved.</p>
+        <p class="legal">
+          <a href="terms.html">Terms &amp; Conditions</a> |
+          <a href="privacy.html">Privacy Policy</a>
+        </p>
+      </div>
+    </footer>
+    <!-- Main JS (personal script, managed separately) -->
+    <script src="script.js"></script>
+  </body>
+</html>

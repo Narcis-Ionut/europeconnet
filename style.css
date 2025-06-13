@@ -1,0 +1,558 @@
+/* 
+========================================
+   ROConnect - CSS Professional Version
+========================================
+*/
+
+/* 
+   1. Variabile Globale 
+   (Ușor de schimbat culorile de bază)
+*/
+:root {
+  --blue-flag: #7688ac;
+  --yellow-flag: #0026ff;
+  --red-flag: #a0acb8;
+
+  --main-bg: #f8f8f8;
+  --text-color: #333;
+  --accent-color: #e63946; /* Buton / link principal */
+  --accent-hover: #d42f3c; /* Hover pt buton/link */
+
+  --max-container-width: 1200px;
+  --transition-speed: 0.3s;
+  --box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  --border-radius: 6px;
+  --font-family: "Roboto", sans-serif;
+}
+
+/* 
+========================================
+  2. Reset & Global
+========================================
+*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-family);
+  background-color: var(--main-bg);
+  color: var(--text-color);
+  line-height: 1.6;
+}
+
+a {
+  text-decoration: none;
+  color: var(--text-color);
+  transition: color var(--transition-speed) ease;
+}
+
+a:hover {
+  color: var(--accent-color);
+}
+
+.container {
+  width: 90%;
+  max-width: var(--max-container-width);
+  margin: 0 auto;
+  padding: 1.5rem 0;
+}
+
+/* 
+========================================
+  3. Romanian Flag Strip
+========================================
+*/
+.flag-strip {
+  display: flex;
+  height: 6px;
+}
+
+.flag-blue {
+  background-color: var(--blue-flag);
+  width: 33.3333%;
+}
+
+.flag-yellow {
+  background-color: var(--yellow-flag);
+  width: 33.3333%;
+}
+
+.flag-red {
+  background-color: var(--red-flag);
+  width: 33.3333%;
+}
+
+/* 
+========================================
+  4. Header & Navigation
+========================================
+*/
+header {
+  background-color: #fff;
+  position: sticky; /* Rămâne lipit sus la scroll */
+  top: 0;
+  z-index: 999;
+  box-shadow: var(--box-shadow);
+}
+
+header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 0;
+}
+
+header h1 {
+  font-weight: 700;
+  color: var(--accent-color);
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+}
+
+nav ul li {
+  position: relative;
+}
+
+nav ul li a {
+  padding: 0.5rem 0.8rem;
+  border-radius: var(--border-radius);
+  transition: background-color var(--transition-speed) ease;
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+  background-color: var(--accent-color);
+  color: #fff;
+}
+
+/* 
+========================================
+  5. Hero Section
+========================================
+*/
+#hero {
+  background: linear-gradient(
+      135deg,
+      rgba(230, 57, 70, 0.85),
+      rgba(255, 255, 255, 0.85)
+    ),
+    url("https://images.unsplash.com/photo-1589447106127-cb76fbed39aa?ixlib=rb-4.0.3&auto=format%2Ccompress&w=1600&q=80")
+      center/cover no-repeat;
+  text-align: center;
+  color: #fff;
+  padding: 4rem 1rem;
+  margin-bottom: 2rem;
+  background-blend-mode: multiply;
+  border-bottom: 3px solid var(--accent-color);
+}
+
+#hero .hero-content {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+#hero h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+#hero p {
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.7rem 1.4rem;
+  background-color: var(--accent-color);
+  color: #fff;
+  font-weight: 500;
+  border-radius: var(--border-radius);
+  transition: background-color var(--transition-speed) ease;
+}
+
+.btn:hover {
+  background-color: var(--accent-hover);
+}
+
+/* 
+========================================
+  6. Info Section
+========================================
+*/
+#info {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+#info h2 {
+  margin-bottom: 1rem;
+}
+
+/* 
+========================================
+  7. FAQ Section
+========================================
+*/
+#faq {
+  margin-top: 2rem;
+}
+
+.faq-item {
+  margin-bottom: 1rem;
+  border: 1px solid #ddd;
+  border-radius: var(--border-radius);
+  overflow: hidden;
+}
+
+.faq-item h3 {
+  cursor: pointer;
+  background-color: #fafafa;
+  padding: 0.8rem 1rem;
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 500;
+  transition: background-color var(--transition-speed) ease;
+}
+
+.faq-item h3:hover {
+  background-color: #eee;
+}
+
+.faq-item p {
+  display: none; /* ascuns by default; toggled via JS */
+  padding: 0.8rem 1rem;
+  background-color: #fff;
+}
+
+/* 
+========================================
+  8. Contact Section
+========================================
+*/
+#contact {
+  margin-top: 2rem;
+}
+
+#contact h2 {
+  margin-bottom: 1rem;
+}
+
+#contact p {
+  margin-bottom: 1.5rem;
+  color: #666;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+form label {
+  font-weight: 500;
+}
+
+form input,
+form textarea {
+  width: 100%;
+  padding: 0.7rem;
+  border: 1px solid #ccc;
+  border-radius: var(--border-radius);
+  resize: none;
+}
+
+form button {
+  width: 100%;
+  padding: 0.7rem;
+  background-color: var(--accent-color);
+  color: #fff;
+  font-weight: 500;
+  border: none;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition: background-color var(--transition-speed) ease;
+}
+
+form button:hover {
+  background-color: var(--accent-hover);
+}
+form select {
+  width: 100%;
+  padding: 0.7rem;
+  border: 1px solid #ccc;
+  border-radius: var(--border-radius);
+  background-color: white;
+  appearance: none;
+  background-repeat: no-repeat;
+  background-position: right 0.7rem center;
+  background-size: 0.65rem auto;
+}
+form select:focus {
+  border-color: var(--accent-color);
+  outline: none;
+}
+/* 
+========================================
+  9. Footer
+========================================
+*/
+footer {
+  background-color: #fff;
+  text-align: center;
+  padding: 1rem 0;
+  box-shadow: var(--box-shadow);
+}
+
+footer .container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+footer p {
+  margin: 0.2rem 0;
+}
+
+footer p.legal a {
+  color: var(--accent-color);
+  margin: 0 0.5rem;
+  font-size: 0.9rem;
+  transition: color var(--transition-speed) ease;
+}
+
+footer p.legal a:hover {
+  color: var(--accent-hover);
+}
+
+/* 
+========================================
+  10. Packages Page
+========================================
+*/
+.tabs {
+  display: flex;
+  gap: 1rem;
+  margin: 2rem 0;
+  justify-content: center;
+}
+
+.tab-button {
+  padding: 0.6rem 1.4rem;
+  border: none;
+  cursor: pointer;
+  background-color: #ddd;
+  border-radius: var(--border-radius);
+  transition: background-color var(--transition-speed) ease;
+  font-weight: 500;
+}
+
+.tab-button.active {
+  background-color: var(--accent-color);
+  color: #fff;
+}
+
+.tab-button:hover:not(.active) {
+  background-color: #ccc;
+}
+
+.package-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.package-card {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: var(--border-radius);
+  width: 280px;
+  padding: 1rem;
+  text-align: center;
+  box-shadow: var(--box-shadow);
+  transition: transform var(--transition-speed) ease,
+    box-shadow var(--transition-speed) ease;
+}
+
+.package-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.package-card h3 {
+  margin: 0 0 1rem 0;
+  font-size: 1.15rem;
+  color: var(--accent-color);
+}
+
+.package-card .price {
+  font-size: 1.2rem;
+  color: var(--accent-color);
+  margin: 0.75rem 0;
+  font-weight: 600;
+}
+
+.package-card .details {
+  margin-bottom: 1rem;
+  color: #555;
+}
+
+.package-card .details ul {
+  list-style: none;
+  margin-top: 0.5rem;
+  padding-left: 0;
+  text-align: left;
+  color: #666;
+}
+
+.select-package-btn {
+  background-color: var(--accent-color);
+  color: #fff;
+  border: none;
+  padding: 0.6rem 1rem;
+  cursor: pointer;
+  border-radius: var(--border-radius);
+  font-weight: 500;
+  transition: background-color var(--transition-speed) ease;
+}
+
+.select-package-btn:hover {
+  background-color: var(--accent-hover);
+}
+
+/* 
+========================================
+  11. Modal
+========================================
+*/
+.modal {
+  display: none; /* hidden by default */
+  position: fixed;
+  z-index: 999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background-color: #fff;
+  margin: auto;
+  padding: 2rem;
+  border-radius: var(--border-radius);
+  width: 90%;
+  max-width: 500px;
+  position: relative;
+  box-shadow: var(--box-shadow);
+  animation: fadeInUp 0.4s ease forwards;
+}
+
+.modal-content .close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  cursor: pointer;
+  font-size: 1.5rem;
+  color: #666;
+  transition: color var(--transition-speed) ease;
+}
+
+.modal-content .close:hover {
+  color: var(--accent-hover);
+}
+
+.modal-content h2 {
+  margin-bottom: 1rem;
+  color: var(--accent-color);
+}
+
+#packageForm {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+#packageForm label {
+  font-weight: 500;
+}
+
+#modalDurationSelect,
+#userEmailModal {
+  width: 100%;
+  padding: 0.6rem;
+  border-radius: var(--border-radius);
+  border: 1px solid #ccc;
+}
+
+#modalBuyBtn {
+  background-color: var(--accent-color);
+  color: #fff;
+  font-weight: 500;
+  border: none;
+  border-radius: var(--border-radius);
+  padding: 0.7rem 1rem;
+  cursor: pointer;
+  transition: background-color var(--transition-speed) ease;
+}
+
+#modalBuyBtn:hover {
+  background-color: var(--accent-hover);
+}
+
+/* 
+========================================
+  12. Animations
+========================================
+*/
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(10%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 
+========================================
+  13. Responsivitate de bază
+========================================
+*/
+@media (max-width: 768px) {
+  header .container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  nav ul {
+    margin-top: 0.5rem;
+    flex-wrap: wrap;
+  }
+  #hero {
+    padding: 3rem 1rem;
+  }
+  .tabs {
+    flex-direction: column;
+  }
+  .package-card {
+    width: 100%;
+    max-width: 400px;
+  }
+}
